@@ -1,164 +1,97 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Deter-code/Redz-LIBRARY-v4-remake/refs/heads/main/REDzLibrary.txt"))()
-
-Library:SetTheme("Theme Name") -- https://raw.githubusercontent.com/REDzHUB/RedzLibV4/main/Themes.lua
-
-Library:SetTransparency(0.1) -- 0, 1
-
-Library:GetThemes() -- void, return = table
-
-Library:GetIcon("Icon Name")
-
--- ///////// 
-
-Library.info.PlaceName
-
-Library.info.Version
-
-Instance:Destroy()
-
-Instance:Visible(false)
-
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/Library-ui/refs/heads/main/Redzhubui"))()
 local Window = redzlib:MakeWindow({
-  Title = "Mystery Hub : Example",
-  SubTitle = "by : Sherys",
-  LoadText = "Centro Misterioso",
-  Flags = "Mystery Hub | Example.lua"
-})
-
---[[
-  Window:Set("New Title or Image")
-]]
-
-local Notify = Library:MakeNotify({
-  Title = "Notification",
-  Text = "This is a Notification",
-  Time = 5
-})
-
---[[
-  Notify:Wait() -- Wait for the notification to end
-]]
-
-local Tab = Window:MakeTab({Name = "Tab", Icon = "Home"})
-
---[[
-  Tab:Set("New Icon or Name")
-]]
-
-local Section = Tab:AddSection({"This is a Section"})
-
---[[
-  Section:Set("Section")
-]]
-
-local Paragraph = Tab:AddParagraph({"Paragraph", "this is a Paragraph"})
-
---[[
-  Paragraph:Set("New Text")
-  
-  Paragraph:Set("New Name", "New Text")
-]]
-
-local TextLabel = Tab:AddLabel({"Text", "This is a Text Label"})
-
---[[
-  TextLabel:Set("New Name")
-]]
-
-local ImageLabel = Tab:AddLabel({"Image", "This is a Image Label", "rbxassetid://"})
-
---[[
-  ImageLabel:Set("New Name", "New Image")
-]]
-
-local Button = Tab:AddButton({
-  Name = "Button",
-  Callback = function()
-    
-  end
-})
-
---[[
-  Button:Callback(function()
-    
-  end)
-  
-  Button:Set("New Name")
-]]
-
-
-local Toggle = Tab:AddToggle({
-  Name = "Toggle",
-  Default = false,
-  Callback = function(Value)
-    
-  end
-})
-
---[[
-  Toggle:Set(false)
-  
-  Toggle:Callback(function(Value)
-  
-  end)
-]]
-
-local Dropdown = Tab:AddDropdown({
-  Name = "Dropdown",
-  Options = {"1", "2", "3"}
-  Default = {"2"}
-  MultSelect = false
-  Callback = function(Value)
-    
-  end
-})
-
---[[
-  Dropdown:Set({New Options}, Void)
-  -- Example : {
-    Dropdown:Set({"one", "two", "three"}, true)
-  }
-  
-  Dropdown:Callback(function(Value)
-    
-  end)
-]]
-
-local Slider = Tab:AddSlider({
-  Name = "Slider",
-  MinValue = 1,
-  MaxValue = 10,
-  Default = 5,
-  Increase = 1,
-  Callback = function(Value)
-    
-  end
-})
-
---[[
-  Slider:Set(7)
-  
-  Slider:Callback(function(Value)
-    
-  end)
-]]
-
-Tab:AddDiscordInvite({
-  DiscordTitle = "REDz Hub | Community",
-  DiscordIcon = "rbxassetid://15298567397",
-  DiscordLink = "https://discord.gg/7aR7kNVt4g"
+  Title = "Mystery Hub : Blox Fruits",
+  SubTitle = "By Sherya",
+  SaveFolder = "Main | Mystery Loader"
 })
 
 Window:AddMinimizeButton({
-  Button = {
-    -- Button Properties
-    Image = "rbxassetid://15298567397"
-  },
-  UICorner = {true,
-    -- Corner Properties
-    CornerRadius = UDim.new(0.5, 0)
-  },
-  UIStroke = {false, {
-    -- Stroke Properties
-  }}
+    Button = { Image = "rbxassetid://71014873973869", BackgroundTransparency = 0 },
+    Corner = { CornerRadius = UDim.new(35, 1) },
 })
+
+Tab1:AddDiscordInvite({
+    Name = "Mystery Hub",
+    Description = "Join server",
+    Logo = "rbxassetid://18751483361",
+    Invite = "Link discord invite",
+})
+
+local Tab1 = Window:MakeTab({"Um", "cherry"})
+
+redzlib:SetTheme("Dark")
+
+Window:SelectTab(Tab1)
+
+local Section = Tab1:AddSection({"Section"})
+
+local Paragraph = Tab1:AddParagraph({"Paragraph", "This is a Paragraph\nSecond Line"})
+
+  local Dialog = Window:Dialog({
+    Title = "Dialog",
+    Text = "This is a Dialog",
+    Options = {
+      {"Confirm", function()
+        
+      end},
+      {"Maybe", function()
+        
+      end},
+      {"Cancel", function()
+        
+      end}
+    }
+  })
+
+Tab1:AddButton({"Print", function(Value)
+print("Hello World!")
+end})
+
+local Toggle1 = Tab1:AddToggle({
+  Name = "Toggle",
+  Description = "This is a <font color='rgb(88, 101, 242)'>Toggle</font> Example",
+  Default = false 
+})
+Toggle1:Callback(function(Value)
+ 
+end)
+
+Tab1:AddToggle({
+    Name = "Toggle",
+    Default = false,
+    Callback = function(v)
+
+    end
+})
+
+Tab1:AddSlider({
+  Name = "Speed",
+  Min = 1,
+  Max = 100,
+  Increase = 1,
+  Default = 16,
+  Callback = function(Value)
+  
+  end
+})
+
+local Dropdown = Tab1:AddDropdown({
+  Name = "Players List",
+  Description = "Select the <font color='rgb(88, 101, 242)'>Number</font>",
+  Options = {"one", "two", "three"},
+  Default = "two",
+  Flag = "dropdown teste",
+  Callback = function(Value)
+    
+  end
+})
+
+Tab1:AddTextBox({
+  Name = "Name item",
+  Description = "1 Item on 1 Server", 
+  PlaceholderText = "item only",
+  Callback = function(Value)
+    
+  end
+})
+
