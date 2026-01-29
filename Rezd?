@@ -19,10 +19,10 @@ Instance:Destroy()
 Instance:Visible(false)
 
 local Window = redzlib:MakeWindow({
-  Title = "REDz HUB : Example",
-  SubTitle = "by : redz9999",
-  LoadText = "redz Hub",
-  Flags = "redz Hub | Example.lua"
+  Title = "Mystery Hub : Example",
+  SubTitle = "by : Sherys",
+  LoadText = "Centro Misterioso",
+  Flags = "Mystery Hub | Example.lua"
 })
 
 --[[
