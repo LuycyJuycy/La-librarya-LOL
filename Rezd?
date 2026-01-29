@@ -1,0 +1,164 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Deter-code/Redz-LIBRARY-v4-remake/refs/heads/main/REDzLibrary.txt"))()
+
+Library:SetTheme("Theme Name") -- https://raw.githubusercontent.com/REDzHUB/RedzLibV4/main/Themes.lua
+
+Library:SetTransparency(0.1) -- 0, 1
+
+Library:GetThemes() -- void, return = table
+
+Library:GetIcon("Icon Name")
+
+-- ///////// 
+
+Library.info.PlaceName
+
+Library.info.Version
+
+Instance:Destroy()
+
+Instance:Visible(false)
+
+local Window = redzlib:MakeWindow({
+  Title = "REDz HUB : Example",
+  SubTitle = "by : redz9999",
+  LoadText = "redz Hub",
+  Flags = "redz Hub | Example.lua"
+})
+
+--[[
+  Window:Set("New Title or Image")
+]]
+
+local Notify = Library:MakeNotify({
+  Title = "Notification",
+  Text = "This is a Notification",
+  Time = 5
+})
+
+--[[
+  Notify:Wait() -- Wait for the notification to end
+]]
+
+local Tab = Window:MakeTab({Name = "Tab", Icon = "Home"})
+
+--[[
+  Tab:Set("New Icon or Name")
+]]
+
+local Section = Tab:AddSection({"This is a Section"})
+
+--[[
+  Section:Set("Section")
+]]
+
+local Paragraph = Tab:AddParagraph({"Paragraph", "this is a Paragraph"})
+
+--[[
+  Paragraph:Set("New Text")
+  
+  Paragraph:Set("New Name", "New Text")
+]]
+
+local TextLabel = Tab:AddLabel({"Text", "This is a Text Label"})
+
+--[[
+  TextLabel:Set("New Name")
+]]
+
+local ImageLabel = Tab:AddLabel({"Image", "This is a Image Label", "rbxassetid://"})
+
+--[[
+  ImageLabel:Set("New Name", "New Image")
+]]
+
+local Button = Tab:AddButton({
+  Name = "Button",
+  Callback = function()
+    
+  end
+})
+
+--[[
+  Button:Callback(function()
+    
+  end)
+  
+  Button:Set("New Name")
+]]
+
+
+local Toggle = Tab:AddToggle({
+  Name = "Toggle",
+  Default = false,
+  Callback = function(Value)
+    
+  end
+})
+
+--[[
+  Toggle:Set(false)
+  
+  Toggle:Callback(function(Value)
+  
+  end)
+]]
+
+local Dropdown = Tab:AddDropdown({
+  Name = "Dropdown",
+  Options = {"1", "2", "3"}
+  Default = {"2"}
+  MultSelect = false
+  Callback = function(Value)
+    
+  end
+})
+
+--[[
+  Dropdown:Set({New Options}, Void)
+  -- Example : {
+    Dropdown:Set({"one", "two", "three"}, true)
+  }
+  
+  Dropdown:Callback(function(Value)
+    
+  end)
+]]
+
+local Slider = Tab:AddSlider({
+  Name = "Slider",
+  MinValue = 1,
+  MaxValue = 10,
+  Default = 5,
+  Increase = 1,
+  Callback = function(Value)
+    
+  end
+})
+
+--[[
+  Slider:Set(7)
+  
+  Slider:Callback(function(Value)
+    
+  end)
+]]
+
+Tab:AddDiscordInvite({
+  DiscordTitle = "REDz Hub | Community",
+  DiscordIcon = "rbxassetid://15298567397",
+  DiscordLink = "https://discord.gg/7aR7kNVt4g"
+})
+
+Window:AddMinimizeButton({
+  Button = {
+    -- Button Properties
+    Image = "rbxassetid://15298567397"
+  },
+  UICorner = {true,
+    -- Corner Properties
+    CornerRadius = UDim.new(0.5, 0)
+  },
+  UIStroke = {false, {
+    -- Stroke Properties
+  }}
+})
