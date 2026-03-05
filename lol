@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet(
-"library here"
+"https://raw.githubusercontent.com/LuycyJuycy/La-librarya-LOL/refs/heads/main/WTF"
 ))()
 
 local Window = INFERNO_HUB:CreateWindow({
